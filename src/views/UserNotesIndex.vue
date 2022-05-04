@@ -27,10 +27,12 @@ export default {
   <div class="home">
     <h1>{{ message }}</h1>
   </div>
-  <div v-for="notes in userNotes" v-bind:key="notes.id">
-    <h4>{{ notes.student }}</h4>
-    <h6>{{ notes.project }}</h6>
-    <p>{{ notes.note }}</p>
+  <div v-for="note in userNotes" v-bind:key="note.id">
+    <h4>{{ note.student }}</h4>
+    <h5>{{ note.user }}</h5>
+    <h5>{{ note.created_at }}</h5>
+    <h6>{{ note.project }}</h6>
+    <p>{{ note.note }}</p>
     <hr />
   </div>
 
