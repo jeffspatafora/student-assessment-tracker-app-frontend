@@ -25,8 +25,8 @@ export default {
   <div class="home">
     <h1>{{ message }}</h1>
     <!-- <p>user_id: <input type="text" v-model="newNoteParams.user_id" /></p> -->
-    <p>student_id: <input type="text" v-model="newNoteParams.student_id" /></p>
-    <p>project_id: <input type="text" v-model="newNoteParams.project_id" /></p>
+    <p>student name: <input type="text" v-model="newNoteParams.student_name" /></p>
+    <p>project title: <input type="text" v-model="newNoteParams.project_title" /></p>
     <p>note: <input type="text" v-model="newNoteParams.note" /></p>
   </div>
   <button v-on:click="createUserNote()">create note</button>
