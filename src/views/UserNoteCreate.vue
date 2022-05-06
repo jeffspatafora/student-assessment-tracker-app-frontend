@@ -24,7 +24,7 @@ export default {
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <p>user_id: <input type="text" v-model="newNoteParams.user_id" /></p>
+    <!-- <p>user_id: <input type="text" v-model="newNoteParams.user_id" /></p> -->
     <p>student_id: <input type="text" v-model="newNoteParams.student_id" /></p>
     <p>project_id: <input type="text" v-model="newNoteParams.project_id" /></p>
     <p>note: <input type="text" v-model="newNoteParams.note" /></p>
