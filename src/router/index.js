@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView.vue';
 import UserNotesIndex from '../views/UserNotesIndex.vue';
 import UserNoteCreate from '../views/UserNoteCreate.vue';
 import SignupView from '../views/SignupView.vue';
-import LoginView from '../views/LoginView.vue'
+import LoginView from '../views/LoginView.vue';
+import LogoutView from '../views/LogoutView.vue'
 
 const routes = [
   {
@@ -32,12 +33,17 @@ const routes = [
   {
     path: '/signup',
     name: 'Signup',
-    component: SignupView,
+    component: SignupView
   },
   {
     path: '/login',
     name: 'Login',
-    component: LoginView,
+    component: LoginView
+  },
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: LogoutView
   }
 ]
 
