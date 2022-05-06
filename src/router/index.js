@@ -5,6 +5,7 @@ import UserNoteCreate from '../views/UserNoteCreate.vue';
 import SignupView from '../views/SignupView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue'
+import StudentsIndex from '../views/StudentsIndex.vue'
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     path: '/logout',
     name: 'Logout',
     component: LogoutView
+  },
+  {
+    path: '/students',
+    name: 'Students',
+    component: StudentsIndex
   }
 ]
 

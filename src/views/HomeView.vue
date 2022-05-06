@@ -2,7 +2,7 @@
 export default {
   data: function () {
     return {
-      message: "Welcome!",
+      message: "Welcome to student assessment!",
     };
   },
   created: function () { },
