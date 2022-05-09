@@ -18,7 +18,8 @@ export default {
     projectCreate: function () {
       console.log('create project');
       axios.post('/projects', this.newProjectParams).then(response => {
-        console.log(response.data);
+        console.log(response, response.data);
+        this.$router.push('/projects');
       })
     }
   },
