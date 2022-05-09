@@ -8,7 +8,8 @@
     <router-link to="/login">login</router-link> |
     <router-link to="/logout">logout</router-link> |
     <!-- <router-link to="/students">Students</router-link> | -->
-    <router-link to="/studentcreate">add a student</router-link>
+    <router-link to="/studentcreate">add a student</router-link> |
+    <router-link to="/projectcreate">add a project</router-link>
   </nav>
   <router-view />
 </template>

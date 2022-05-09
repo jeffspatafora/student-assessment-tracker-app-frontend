@@ -6,7 +6,8 @@ import SignupView from '../views/SignupView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import StudentsIndex from '../views/StudentsIndex.vue';
-import StudentCreate from '../views/StudentCreate.vue'
+import StudentCreate from '../views/StudentCreate.vue';
+import ProjectCreate from '../views/ProjectCreate.vue'
 
 const routes = [
   {
@@ -56,6 +57,11 @@ const routes = [
     path: '/studentcreate',
     name: 'StudentsCreate',
     component: StudentCreate
+  },
+  {
+    path: '/projectcreate',
+    name: 'ProjectCreate',
+    component: ProjectCreate
   }
 ]
 
