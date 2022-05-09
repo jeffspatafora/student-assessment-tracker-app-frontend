@@ -47,8 +47,8 @@ export default {
       </select>
     </p>
     <p>note: <input type="text" v-model="newNoteParams.note" /></p>
+    <button v-on:click="createUserNote()">create note</button>
   </div>
-  <button v-on:click="createUserNote()">create note</button>
 
 </template>
 
