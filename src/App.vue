@@ -4,10 +4,11 @@
     <!-- <router-link to="/about">About</router-link> | -->
     <router-link to="/usernotesindex">notes</router-link> |
     <router-link to="/usernotescreate">create a note</router-link> |
-    <router-link to="/signup">Signup</router-link> |
-    <router-link to="/login">Login</router-link> |
-    <router-link to="/logout">Logout</router-link> |
-    <router-link to="/students">Students</router-link>
+    <router-link to="/signup">signup</router-link> |
+    <router-link to="/login">login</router-link> |
+    <router-link to="/logout">logout</router-link> |
+    <!-- <router-link to="/students">Students</router-link> | -->
+    <router-link to="/studentcreate">add a student</router-link>
   </nav>
   <router-view />
 </template>
