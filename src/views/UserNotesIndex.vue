@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "All notes",
+      message: "notes",
       userNotes: [],
       students: [],
       projects: [],
@@ -49,23 +49,23 @@ export default {
   </div>
 
   <p>
+    <label>Choose a student: </label>
+    <select v-model="student.id">
+      <option v-for="student in students" v-bind:key="student.id" v-bind:value="student.id">{{ student.name }}</option>
+    </select>
+  </p>
+
+  <p>
     <label>Choose a project: </label>
     <select v-model="project.id">
       <option v-for="project in projects" v-bind:key="project.id" v-bind:value="project.id">{{ project.title }}</option>
     </select>
   </p>
 
-  <p>
-    <label>Choose a student: </label>
-    <select v-model="student.id">
-      <option v-for="student in students" v-bind:key="student.id" v-bind:value="student.id">{{ student.name }}</option>
-    </select>
-  </p>
   <button v-on:click="indexUserNotes()">See Notes</button>
 
   <div v-for="note in userNotes" v-bind:key="note.id">
-    <h5>{{ note.created_at }} - {{ note.note }}</h5>
-    <hr />
+    <p>{{ note.readable_created_at }} - {{ note.note }}</p>
   </div>
 
 </template>

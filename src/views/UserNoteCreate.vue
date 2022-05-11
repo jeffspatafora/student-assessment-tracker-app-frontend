@@ -46,8 +46,8 @@ export default {
         <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
       </select>
     </p>
-    <p>note: <input type="text" v-model="newNoteParams.note" /></p>
-    <button v-on:click="createUserNote()">create note</button>
+    <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
+    <button v-on:click="createUserNote()">Create Note</button>
   </div>
 
 </template>
