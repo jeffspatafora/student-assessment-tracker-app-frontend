@@ -7,18 +7,20 @@ export default {
       message: "All notes",
       userNotes: [],
       students: [],
-      projects: []
+      projects: [],
+      student: {},
+      project: {}
     };
   },
   created: function () {
-    this.indexUserNotes();
+    // this.indexUserNotes();
     this.indexProjects();
     this.indexStudents();
   },
   methods: {
     indexUserNotes: function () {
       console.log("in user notes");
-      axios.get("/user_notes.json").then(response => {
+      axios.get(`/user_notes.json?student_id=${this.student.id}&project_id=${this.project.id}`).then(response => {
         console.log(response, response.data);
         this.userNotes = response.data;
       });
@@ -48,23 +50,21 @@ export default {
 
   <p>
     <label>Choose a project: </label>
-    <select v-model="projects.title">
-      <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
-    </select>
-  </p>
-  <p>
-    <label>Choose a student: </label>
-    <select v-model="students.name">
-      <option v-for="student in students" v-bind:key="student.id">{{ student.name }}</option>
+    <select v-model="project.id">
+      <option v-for="project in projects" v-bind:key="project.id" v-bind:value="project.id">{{ project.title }}</option>
     </select>
   </p>
 
+  <p>
+    <label>Choose a student: </label>
+    <select v-model="student.id">
+      <option v-for="student in students" v-bind:key="student.id" v-bind:value="student.id">{{ student.name }}</option>
+    </select>
+  </p>
+  <button v-on:click="indexUserNotes()">See Notes</button>
+
   <div v-for="note in userNotes" v-bind:key="note.id">
-    <h4>{{ note.student }}</h4>
-    <h5>{{ note.user }}</h5>
-    <h5>{{ note.created_at }}</h5>
-    <h6>{{ note.project }}</h6>
-    <p>{{ note.note }}</p>
+    <h5>{{ note.created_at }} - {{ note.note }}</h5>
     <hr />
   </div>
 
