@@ -71,4 +71,15 @@ export default {
 </template>
 
 <style>
+body {
+  background-color: teal;
+}
+
+h1 {
+  color: limegreen;
+}
+
+p {
+  color: gold;
+}
 </style>

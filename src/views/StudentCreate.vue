@@ -32,8 +32,8 @@ export default {
     <p>Email: <input type="text" v-model="newStudentParams.email" /></p>
   </div>
   <button v-on:click="studentCreate()">add student</button>
-  <h2>Students:</h2>
-  <h4 v-for="student in students" v-bind:key="student.id">{{ student.name }}</h4>
+  <!-- <h2>Students:</h2>
+  <h4 v-for="student in students" v-bind:key="student.id">{{ student.name }}</h4> -->
 
 </template>
 

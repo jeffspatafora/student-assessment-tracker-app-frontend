@@ -34,8 +34,8 @@ export default {
   <p>Section: <input type="text" v-model="newProjectParams.section" /></p>
   <p>Section Number: <input type="text" v-model="newProjectParams.section_number" /></p>
   <button v-on:click="projectCreate()">add project</button>
-  <h2>Projects: </h2>
-  <h4 v-for="project in projects" v-bind:key="project.id">{{ project.title }}</h4>
+  <!-- <h2>Projects: </h2>
+  <h4 v-for="project in projects" v-bind:key="project.id">{{ project.title }}</h4> -->
 </template>
 
 <style>
