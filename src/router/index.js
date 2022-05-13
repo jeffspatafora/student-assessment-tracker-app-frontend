@@ -7,7 +7,8 @@ import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import StudentsIndex from '../views/StudentsIndex.vue';
 import StudentCreate from '../views/StudentCreate.vue';
-import ProjectCreate from '../views/ProjectCreate.vue'
+import ProjectCreate from '../views/ProjectCreate.vue';
+import TriviaView from '../views/TriviaView.vue'
 
 const routes = [
   {
@@ -62,6 +63,11 @@ const routes = [
     path: '/projectcreate',
     name: 'ProjectCreate',
     component: ProjectCreate
+  },
+  {
+    path: '/trivia',
+    name: 'Trivia',
+    component: TriviaView
   }
 ]
 
