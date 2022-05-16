@@ -9,6 +9,7 @@ export default {
       correctAnswer: "",
       showCorrectAnswer: "",
       possibleAnswers: [],
+      triviaCategories: {}
     };
   },
   created: function () {
@@ -37,6 +38,10 @@ export default {
     },
     indexTriviaCategories: function () {
       console.log('index trivia categoires');
+      axios.get("trivia_categories").then(response => {
+        console.log(response.data);
+        this.triviaCategories = response.data;
+      })
     }
   }
 };
@@ -60,6 +65,8 @@ export default {
   </div>
   <hr>
   <button v-on:click="resetSessionToken()">Reset Trivia Session Token</button>
+
+  <p>{{ triviaCategories }}</p>
 
 
 
