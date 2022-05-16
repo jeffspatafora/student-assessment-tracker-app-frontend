@@ -19,9 +19,18 @@ export default {
         this.question = response.data["question"];
         this.correctAnswer = response.data["correct_answer"];
         this.possibleAnswers = response.data["possible_answers"];
+      });
+    },
+    getCorrectAnswer: function () {
+      console.log(this.correctAnswer);
+    },
+    resetSessionToken: function () {
+      console.log('token reset');
+      axios.patch("/trivia_session_token").then(response => {
+        console.log(response.data);
       })
     }
-  },
+  }
 };
 </script>
 
@@ -36,6 +45,10 @@ export default {
   <p v-for="possibleAnswer in possibleAnswers" v-bind:key="possibleAnswer">
     {{ possibleAnswer }}
   </p>
+
+  <button v-on:click="getCorrectAnswer()">Correct Answer</button>
+  <hr>
+  <button v-on:click="resetSessionToken()">Reset Trivia Session Token</button>
 
 
 
