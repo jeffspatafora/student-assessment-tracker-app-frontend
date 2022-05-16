@@ -11,7 +11,9 @@ export default {
       possibleAnswers: [],
     };
   },
-  created: function () { },
+  created: function () {
+    this.indexTriviaCategories();
+  },
   methods: {
     getTriviaQuestion: function () {
       console.log("get trivia");
@@ -32,6 +34,9 @@ export default {
       axios.patch("/trivia_session_token").then(response => {
         console.log(response.data);
       })
+    },
+    indexTriviaCategories: function () {
+      console.log('index trivia categoires');
     }
   }
 };
