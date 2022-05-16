@@ -5,7 +5,9 @@ export default {
   data: function () {
     return {
       message: "Trivia",
-      question: ""
+      question: "",
+      correctAnswer: "",
+      possibleAnswers: []
     };
   },
   created: function () { },
@@ -15,6 +17,8 @@ export default {
       axios.get("/questions").then(response => {
         console.log(response.data);
         this.question = response.data["question"];
+        this.correctAnswer = response.data["correct_answer"];
+        this.possibleAnswers = response.data["possible_answers"];
       })
     }
   },
@@ -26,8 +30,15 @@ export default {
     <h1>{{ message }}</h1>
   </div>
 
-  <button v-on:click="getTriviaQuestion()">Get Trivia Question!</button>
+  <button v-on:click="getTriviaQuestion()">Get A Trivia Question!</button>
   <h2>{{ question }}</h2>
+
+  <p v-for="possibleAnswer in possibleAnswers" v-bind:key="possibleAnswer">
+    {{ possibleAnswer }}
+  </p>
+
+
+
 </template>
 
 <style>
