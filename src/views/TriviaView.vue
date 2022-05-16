@@ -7,7 +7,8 @@ export default {
       message: "Trivia",
       question: "",
       correctAnswer: "",
-      possibleAnswers: []
+      showCorrectAnswer: "",
+      possibleAnswers: [],
     };
   },
   created: function () { },
@@ -16,6 +17,7 @@ export default {
       console.log("get trivia");
       axios.get("/questions").then(response => {
         console.log(response.data);
+        this.showCorrectAnswer = "";
         this.question = response.data["question"];
         this.correctAnswer = response.data["correct_answer"];
         this.possibleAnswers = response.data["possible_answers"];
@@ -23,6 +25,7 @@ export default {
     },
     getCorrectAnswer: function () {
       console.log(this.correctAnswer);
+      this.showCorrectAnswer = this.correctAnswer;
     },
     resetSessionToken: function () {
       console.log('token reset');
@@ -46,7 +49,10 @@ export default {
     {{ possibleAnswer }}
   </p>
 
-  <button v-on:click="getCorrectAnswer()">Correct Answer</button>
+  <div>
+    <button v-on:click="getCorrectAnswer()">See Correct Answer</button>
+    <p v-if="showCorrectAnswer">{{ showCorrectAnswer }}</p>
+  </div>
   <hr>
   <button v-on:click="resetSessionToken()">Reset Trivia Session Token</button>
 
