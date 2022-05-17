@@ -22,7 +22,7 @@ export default {
       console.log("get trivia");
       console.log(this.selectedCategory);
       console.log(this.difficulty);
-      axios.get(`/questions.json?category_id=${this.selectedCategory["id"]}&difficulty=${this.difficulty}`).then(response => {
+      axios.get(`/questions.json?category_id=${this.selectedCategory["id"]}&${this.difficulty}`).then(response => {
         console.log(response.data);
         this.showCorrectAnswer = "";
         this.question = response.data["question"];
@@ -68,9 +68,10 @@ export default {
   <p>
     <label>Choose a difficulty: </label>
     <select v-model="difficulty">
-      <option value="easy">Easy</option>
-      <option value="medium">Medium</option>
-      <option value="hard">Hard</option>
+      <option value="difficulty=">Any</option>
+      <option value="difficulty=easy">Easy</option>
+      <option value="difficulty=medium">Medium</option>
+      <option value="difficulty=hard">Hard</option>
     </select>
   </p>
 
