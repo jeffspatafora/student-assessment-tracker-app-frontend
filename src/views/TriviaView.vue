@@ -9,7 +9,8 @@ export default {
       correctAnswer: "",
       showCorrectAnswer: "",
       possibleAnswers: [],
-      triviaCategories: {}
+      triviaCategories: [],
+      selectedCategory: ""
     };
   },
   created: function () {
@@ -40,7 +41,7 @@ export default {
       console.log('index trivia categoires');
       axios.get("trivia_categories").then(response => {
         console.log(response.data);
-        this.triviaCategories = response.data;
+        this.triviaCategories = response.data["trivia_categories"];
       })
     }
   }
@@ -51,6 +52,16 @@ export default {
   <div class="home">
     <h1>{{ message }}</h1>
   </div>
+
+  <p>
+    <label>Choose a category: </label>
+    <select v-model="selectedCategory">
+      <option v-for="triviaCategory in triviaCategories" v-bind:key="triviaCategory" v-bind:value="triviaCategory">{{
+          triviaCategory.name
+      }}
+      </option>
+    </select>
+  </p>
 
   <button v-on:click="getTriviaQuestion()">Get A Trivia Question!</button>
   <h2>{{ question }}</h2>
@@ -66,7 +77,8 @@ export default {
   <hr>
   <button v-on:click="resetSessionToken()">Reset Trivia Session Token</button>
 
-  <p>{{ triviaCategories }}</p>
+  <!-- <p>{{ triviaCategories }}</p> -->
+  <p>{{ selectedCategory.id }}</p>
 
 
 
