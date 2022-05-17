@@ -20,7 +20,7 @@ export default {
   methods: {
     getTriviaQuestion: function () {
       console.log("get trivia");
-      axios.get("/questions").then(response => {
+      axios.get(`/questions.json?category_id=${this.selectedCategory["id"]}&difficulty=${this.difficulty}`).then(response => {
         console.log(response.data);
         this.showCorrectAnswer = "";
         this.question = response.data["question"];
