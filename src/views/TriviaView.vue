@@ -20,6 +20,8 @@ export default {
   methods: {
     getTriviaQuestion: function () {
       console.log("get trivia");
+      console.log(this.selectedCategory);
+      console.log(this.difficulty);
       axios.get(`/questions.json?category_id=${this.selectedCategory["id"]}&difficulty=${this.difficulty}`).then(response => {
         console.log(response.data);
         this.showCorrectAnswer = "";
@@ -41,7 +43,6 @@ export default {
     indexTriviaCategories: function () {
       console.log('index trivia categoires');
       axios.get("trivia_categories").then(response => {
-        console.log(response.data);
         this.triviaCategories = response.data["trivia_categories"];
       })
     }
@@ -74,7 +75,7 @@ export default {
   </p>
 
 
-  <button v-on:click="getTriviaQuestion()">Get A Trivia Question!</button>
+  <button v-on:click="getTriviaQuestion()">Get A Question!</button>
   <h2>{{ question }}</h2>
 
   <p v-for="possibleAnswer in possibleAnswers" v-bind:key="possibleAnswer">
@@ -86,12 +87,7 @@ export default {
     <p v-if="showCorrectAnswer">{{ showCorrectAnswer }}</p>
   </div>
   <hr>
-  <button v-on:click="resetSessionToken()">Reset Trivia Session Token</button>
-
-  <!-- <p>{{ triviaCategories }}</p> -->
-  <p>{{ selectedCategory["id"] }}</p>
-  <p>{{ difficulty }}</p>
-
+  <button v-on:click="resetSessionToken()">Reset Session Token</button>
 
 
 </template>
