@@ -1,27 +1,27 @@
 <script>
-  import axios from "axios";
+import axios from "axios";
 
-  export default {
-    data: function () {
-      return {
-        newUserParams: {},
-        errors: [],
-      };
+export default {
+  data: function () {
+    return {
+      newUserParams: {},
+      errors: [],
+    };
+  },
+  methods: {
+    submit: function () {
+      axios
+        .post("/users", this.newUserParams)
+        .then((response) => {
+          console.log(response.data);
+          this.$router.push("/login");
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
     },
-    methods: {
-      submit: function () {
-        axios
-          .post("/users", this.newUserParams)
-          .then((response) => {
-            console.log(response.data);
-            this.$router.push("/login");
-          })
-          .catch((error) => {
-            this.errors = error.response.data.errors;
-          });
-      },
-    },
-  };
+  },
+};
 </script>
 
 <template>
@@ -31,22 +31,22 @@
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div>
+      <p>
         <label>Name:</label>
         <input type="text" v-model="newUserParams.name" />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Email:</label>
         <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Password:</label>
         <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
+      </p>
+      <p>
         <label>Password confirmation:</label>
         <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
+      </p>
       <input type="submit" value="Submit" />
     </form>
   </div>
