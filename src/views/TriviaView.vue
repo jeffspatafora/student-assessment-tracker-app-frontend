@@ -11,6 +11,7 @@ export default {
       possibleAnswers: [],
       triviaCategories: [],
       selectedCategory: "",
+      selectedCategoryId: "",
       difficulty: ""
     };
   },
@@ -21,8 +22,14 @@ export default {
     getTriviaQuestion: function () {
       console.log("get trivia");
       console.log(this.selectedCategory);
+      if (this.selectedCategory === "any") {
+        this.selectedCategoryId = 1;
+      } else {
+        this.selectedCategoryId = this.selectedCategory["id"];
+      }
+      console.log(this.selectedCategoryId);
       console.log(this.difficulty);
-      axios.get(`/questions.json?category_id=${this.selectedCategory["id"]}&${this.difficulty}`).then(response => {
+      axios.get(`/questions.json?category_id=${this.selectedCategoryId}&${this.difficulty}`).then(response => {
         console.log(response.data);
         this.showCorrectAnswer = "";
         this.question = response.data["question"];
@@ -58,6 +65,7 @@ export default {
   <p>
     <label>Choose a category: </label>
     <select v-model="selectedCategory">
+      <option value="any">Any</option>
       <option v-for="triviaCategory in triviaCategories" v-bind:key="triviaCategory" v-bind:value="triviaCategory">{{
           triviaCategory["name"]
       }}
@@ -89,8 +97,6 @@ export default {
   </div>
   <hr>
   <button v-on:click="resetSessionToken()">Reset Session Token</button>
-  <p>Longer than 6 hrs since last question request? Please reset session token</p>
-  <p>No longer getting questions? Please reset session token</p>
 
 
 </template>
