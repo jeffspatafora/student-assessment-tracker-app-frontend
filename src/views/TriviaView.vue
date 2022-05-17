@@ -88,6 +88,8 @@ export default {
   </div>
   <hr>
   <button v-on:click="resetSessionToken()">Reset Session Token</button>
+  <p>Longer than 6 hrs since last question request? Please reset session token</p>
+  <p>No longer getting questions? Please reset session token</p>
 
 
 </template>
