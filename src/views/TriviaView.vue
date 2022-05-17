@@ -10,7 +10,8 @@ export default {
       showCorrectAnswer: "",
       possibleAnswers: [],
       triviaCategories: [],
-      selectedCategory: ""
+      selectedCategory: "",
+      difficulty: ""
     };
   },
   created: function () {
@@ -57,11 +58,21 @@ export default {
     <label>Choose a category: </label>
     <select v-model="selectedCategory">
       <option v-for="triviaCategory in triviaCategories" v-bind:key="triviaCategory" v-bind:value="triviaCategory">{{
-          triviaCategory.name
+          triviaCategory["name"]
       }}
       </option>
     </select>
   </p>
+
+  <p>
+    <label>Choose a difficulty: </label>
+    <select v-model="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </p>
+
 
   <button v-on:click="getTriviaQuestion()">Get A Trivia Question!</button>
   <h2>{{ question }}</h2>
@@ -78,7 +89,8 @@ export default {
   <button v-on:click="resetSessionToken()">Reset Trivia Session Token</button>
 
   <!-- <p>{{ triviaCategories }}</p> -->
-  <p>{{ selectedCategory.id }}</p>
+  <p>{{ selectedCategory["id"] }}</p>
+  <p>{{ difficulty }}</p>
 
 
 
