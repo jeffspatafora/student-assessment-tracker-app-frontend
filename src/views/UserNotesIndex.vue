@@ -13,7 +13,6 @@ export default {
     };
   },
   created: function () {
-    // this.indexUserNotes();
     this.indexProjects();
     this.indexStudents();
   },
@@ -56,7 +55,7 @@ export default {
   </p>
 
   <p>
-    <label>Choose a project: </label>
+    <label>Choose a concept: </label>
     <select v-model="project.id">
       <option v-for="project in projects" v-bind:key="project.id" v-bind:value="project.id">{{ project.title }}</option>
     </select>
@@ -67,19 +66,7 @@ export default {
   <div v-for="note in userNotes" v-bind:key="note.id">
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
   </div>
-
 </template>
 
 <style>
-body {
-  background-color: teal;
-}
-
-h1 {
-  color: limegreen;
-}
-
-p {
-  color: gold;
-}
 </style>

@@ -41,7 +41,7 @@ export default {
       </select>
     </p>
     <p>
-      <label>Choose a project: </label>
+      <label>Choose a concept: </label>
       <select v-model="newNoteParams.project_title">
         <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
       </select>
@@ -49,7 +49,6 @@ export default {
     <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
     <button v-on:click="createUserNote()">Create Note</button>
   </div>
-
 </template>
 
 <style>

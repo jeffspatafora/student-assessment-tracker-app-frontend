@@ -83,7 +83,6 @@ export default {
     </select>
   </p>
 
-
   <button v-on:click="getTriviaQuestion()">Get A Question!</button>
   <h2>{{ question }}</h2>
 
@@ -97,7 +96,6 @@ export default {
   </div>
   <hr>
   <button v-on:click="resetSessionToken()">Reset Session Token</button>
-
 
 </template>
 
