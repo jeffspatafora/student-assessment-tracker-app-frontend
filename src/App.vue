@@ -10,7 +10,7 @@
     <!-- <router-link to="/students">Students</router-link> | -->
     <router-link to="/studentcreate">add a student</router-link> |
     <router-link to="/projectcreate">add a concept</router-link> |
-    <router-link to="/trivia">trivia</router-link>
+    <router-link to="/trivia">question of the day</router-link>
   </nav>
   <router-view />
 </template>

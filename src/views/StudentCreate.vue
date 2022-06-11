@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Add a student",
+      message: "add a student",
       students: [],
       newStudentParams: {}
     };
@@ -18,7 +18,7 @@ export default {
     studentCreate: function () {
       axios.post('/students', this.newStudentParams).then(response => {
         console.log(response, response.data);
-        this.$router.push("/studentcreate");
+        this.$router.push("/usernotesindex");
       })
     }
   },
