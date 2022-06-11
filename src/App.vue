@@ -5,12 +5,12 @@
     <router-link to="/usernotesindex">notes</router-link> |
     <router-link to="/usernotescreate">create a note</router-link> |
     <router-link to="/signup">signup</router-link> |
-    <router-link to="/login">login</router-link> |
-    <router-link to="/logout">logout</router-link> |
+    <!-- <router-link to="/login">login</router-link> | -->
     <!-- <router-link to="/students">Students</router-link> | -->
     <router-link to="/studentcreate">add a student</router-link> |
     <router-link to="/projectcreate">add a concept</router-link> |
-    <router-link to="/trivia">question of the day</router-link>
+    <router-link to="/trivia">question of the day</router-link> |
+    <router-link to="/logout">logout</router-link> |
   </nav>
   <router-view />
 </template>
