@@ -71,8 +71,8 @@ const routes = [
     component: TriviaView
   },
   {
-    path: '/studentshow',
-    name: 'StudentShow',
+    path: '/students/:id',
+    name: 'student-show',
     component: StudentShow
   }
 ]
