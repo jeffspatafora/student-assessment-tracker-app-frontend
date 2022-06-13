@@ -8,7 +8,8 @@ import LogoutView from '../views/LogoutView.vue';
 import StudentsIndex from '../views/StudentsIndex.vue';
 import StudentCreate from '../views/StudentCreate.vue';
 import ProjectCreate from '../views/ProjectCreate.vue';
-import TriviaView from '../views/TriviaView.vue'
+import TriviaView from '../views/TriviaView.vue';
+import StudentShow from '../views/StudentShow.vue'
 
 const routes = [
   {
@@ -68,6 +69,11 @@ const routes = [
     path: '/trivia',
     name: 'Trivia',
     component: TriviaView
+  },
+  {
+    path: '/studentshow',
+    name: 'StudentShow',
+    component: StudentShow
   }
 ]
 
