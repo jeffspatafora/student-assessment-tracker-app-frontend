@@ -33,9 +33,9 @@ export default {
   <div class="login">
     <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
-      <ul>
+      <h3>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
+      </h3>
       <p>
         <label>Email:</label>
         <input type="email" v-model="newSessionParams.email" />

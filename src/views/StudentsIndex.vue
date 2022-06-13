@@ -27,7 +27,7 @@ export default {
     <h1>{{ message }}</h1>
   </div>
   <div v-for="student in students" v-bind:key="student.id">
-    <h3>{{ student.name }}</h3>
+    <a href="">{{ student.name }}</a>
   </div>
 </template>
 
