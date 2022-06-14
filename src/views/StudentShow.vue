@@ -5,7 +5,7 @@ export default {
   data: function () {
     return {
       message: "Student show",
-      studentName: '',
+      // studentName: '',
       student: {}
     };
   },
@@ -22,6 +22,9 @@ export default {
 </script>
 
 <template>
+  <h2>
+    <a href="/students">Back to students list</a>
+  </h2>
   <div class="student-show">
     <h1>{{ student.name }} - {{ student.email }}</h1>
   </div>
