@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="students-index">
     <h1>{{ message }}</h1>
   </div>
   <div v-for="student in students" v-bind:key="student.id">

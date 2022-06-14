@@ -58,7 +58,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="trivia">
     <h1>{{ message }}</h1>
   </div>
 

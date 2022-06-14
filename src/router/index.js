@@ -27,47 +27,47 @@ const routes = [
   },
   {
     path: '/usernotesindex',
-    name: 'UserNotesIndex',
+    name: 'user-notes-index',
     component: UserNotesIndex
   },
   {
     path: '/usernotescreate',
-    name: 'UserNoteCreate',
+    name: 'user-notes-create',
     component: UserNoteCreate
   },
   {
     path: '/signup',
-    name: 'Signup',
+    name: 'signup',
     component: SignupView
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: LoginView
   },
   {
     path: '/logout',
-    name: 'Logout',
+    name: 'logout',
     component: LogoutView
   },
   {
     path: '/students',
-    name: 'Students',
+    name: 'students-index',
     component: StudentsIndex
   },
   {
     path: '/studentcreate',
-    name: 'StudentsCreate',
+    name: 'students-create',
     component: StudentCreate
   },
   {
     path: '/projectcreate',
-    name: 'ProjectCreate',
+    name: 'project-create',
     component: ProjectCreate
   },
   {
     path: '/trivia',
-    name: 'Trivia',
+    name: 'trivia',
     component: TriviaView
   },
   {

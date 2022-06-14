@@ -43,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="user-notes-index">
     <h1>{{ message }}</h1>
   </div>
 

@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="user-notes-create">
     <h1>{{ message }}</h1>
     <p>
       <label>Choose a student: </label>

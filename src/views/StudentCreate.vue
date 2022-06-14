@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="students-create">
     <h1>{{ message }}</h1>
     <p>Name: <input type="text" v-model="newStudentParams.name" /></p>
     <p>Email: <input type="text" v-model="newStudentParams.email" /></p>

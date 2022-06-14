@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="project-create">
     <h1>{{ message }}</h1>
   </div>
   <p>Title: <input type="text" v-model="newProjectParams.title" /></p>
