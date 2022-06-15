@@ -19,6 +19,7 @@ export default {
       // this.studentName = response.data[0]['name'];
       this.student = response.data;
     });
+    this.indexProjects();
   },
   methods: {
     indexUserNotes: function () {
