@@ -25,6 +25,7 @@ export default {
       console.log("in user notes");
       axios.get('/user_notes.json?student_id=1&project_id=2').then(response => {
         console.log(response.data);
+        this.userNotes = response.data;
       });
     }
   },
@@ -35,10 +36,16 @@ export default {
   <h2>
     <a href="/students">Back to students list</a>
   </h2>
+
   <div class="student-show">
     <h1>{{ student.name }} - {{ student.email }}</h1>
   </div>
+
   <button v-on:click="indexUserNotes()">index user notes</button>
+
+  <div v-for="note in userNotes" v-bind:key="note.id">
+    <p>{{ note.readable_created_at }} - {{ note.note }}</p>
+  </div>
 </template>
 
 
