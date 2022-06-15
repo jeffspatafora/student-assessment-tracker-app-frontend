@@ -24,7 +24,7 @@ export default {
   methods: {
     indexUserNotes: function () {
       console.log("in user notes");
-      axios.get(`/user_notes.json?student_id=${this.student.id}&project_id=15`).then(response => {
+      axios.get(`/user_notes.json?student_id=${this.student.id}&project_id=${this.project.id}`).then(response => {
         console.log(response.data);
         this.userNotes = response.data;
       });
@@ -34,29 +34,34 @@ export default {
       axios.get('/projects').then(response => {
         console.log(response.data);
         this.projects = response.data;
-      })
+      });
     }
   },
 };
 </script>
 
 <template>
-  <h2>
+  <h4>
     <a href="/students">Back to students list</a>
-  </h2>
+  </h4>
 
   <div class="student-show">
-    <h1>{{ student.name }} - {{ student.email }}</h1>
+    <h1>{{ student.name }}</h1>
+    <h3>{{ student.email }}</h3>
   </div>
 
-  <button v-on:click="indexUserNotes()">index user notes</button>
+  <p>
+    <label>Choose a concept: </label>
+    <select v-model="project.id">
+      <option v-for="project in projects" v-bind:key="project.id" v-bind:value="project.id">{{ project.title }}</option>
+    </select>
+  </p>
 
-  <button v-on:click="indexProjects()">index concepts</button>
-
-  <p>{{ projects }}</p>
+  <button v-on:click="indexUserNotes()">see data</button>
 
   <div v-for="note in userNotes" v-bind:key="note.id">
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
+    <hr>
   </div>
 </template>
 
