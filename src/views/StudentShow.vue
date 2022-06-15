@@ -23,10 +23,13 @@ export default {
   methods: {
     indexUserNotes: function () {
       console.log("in user notes");
-      axios.get('/user_notes.json?student_id=1&project_id=2').then(response => {
+      axios.get(`/user_notes.json?student_id=${this.student.id}&project_id=15`).then(response => {
         console.log(response.data);
         this.userNotes = response.data;
       });
+    },
+    indexProjects: function () {
+      console.log('in projects');
     }
   },
 };
@@ -42,6 +45,8 @@ export default {
   </div>
 
   <button v-on:click="indexUserNotes()">index user notes</button>
+
+  <button v-on:click="indexProjects()">index concepts</button>
 
   <div v-for="note in userNotes" v-bind:key="note.id">
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
