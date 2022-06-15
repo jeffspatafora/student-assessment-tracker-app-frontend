@@ -30,6 +30,10 @@ export default {
     },
     indexProjects: function () {
       console.log('in projects');
+      axios.get('/projects').then(response => {
+        console.log(response.data);
+        this.projects = response.data;
+      })
     }
   },
 };
@@ -47,6 +51,8 @@ export default {
   <button v-on:click="indexUserNotes()">index user notes</button>
 
   <button v-on:click="indexProjects()">index concepts</button>
+
+  <p>{{ projects }}</p>
 
   <div v-for="note in userNotes" v-bind:key="note.id">
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
