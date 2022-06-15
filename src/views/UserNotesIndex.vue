@@ -29,14 +29,14 @@ export default {
       axios.get("/projects").then(response => {
         console.log(response.data);
         this.projects = response.data;
-      })
+      });
     },
     indexStudents: function () {
       console.log("in students");
       axios.get("/students").then(response => {
         console.log(response.data);
         this.students = response.data;
-      })
+      });
     }
   },
 };
