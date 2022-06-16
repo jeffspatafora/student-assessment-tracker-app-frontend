@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "add a new note",
+      message: "add data",
       newNoteParams: {},
       students: [],
       projects: []
@@ -34,20 +34,32 @@ export default {
 <template>
   <div class="user-notes-create">
     <h1>{{ message }}</h1>
-    <p>
-      <label>Choose a student: </label>
-      <select v-model="newNoteParams.student_name">
-        <option v-for="student in students" v-bind:key="student.id">{{ student.name }}</option>
-      </select>
-    </p>
-    <p>
-      <label>Choose a concept: </label>
-      <select v-model="newNoteParams.project_title">
-        <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
-      </select>
-    </p>
-    <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
-    <button v-on:click="createUserNote()">Create Note</button>
+  </div>
+  <p>
+    <label>Choose a student: </label>
+    <select v-model="newNoteParams.student_name">
+      <option v-for="student in students" v-bind:key="student.id">{{ student.name }}</option>
+    </select>
+  </p>
+  <p>
+    <label>Choose a concept: </label>
+    <select v-model="newNoteParams.project_title">
+      <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
+    </select>
+  </p>
+  <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
+  <button v-on:click="createUserNote()">Create Note</button>
+  <hr>
+  <div>
+    <form v-on:submit.prevent="submit()">
+      <p>
+        Description: <input type="text" v-model="description">
+      </p>
+      <p>
+        Image: <input type="file" v-on:change="setFile($event)" ref="fileInput">
+      </p>
+      <input type="submit" value="Submit">
+    </form>
   </div>
 </template>
 
