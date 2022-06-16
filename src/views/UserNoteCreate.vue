@@ -9,7 +9,9 @@ export default {
       students: [],
       projects: [],
       image: "",
-      description: ""
+      description: "",
+      studentName: "",
+      projectTitle: ""
     };
   },
   created: function () {
@@ -36,7 +38,9 @@ export default {
     },
     submit: function () {
       var formData = new FormData();
-      formData.append("description", this.description)
+      formData.append("student_name", this.studentName);
+      formData.append("project_title", this.projectTitle);
+      formData.append("description", this.description);
       formData.append("image", this.image);
 
       axios.post("/student_works", formData).then(response => {
@@ -64,12 +68,23 @@ export default {
       <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
     </select>
   </p>
-  <hr>
   <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
   <button v-on:click="createUserNote()">Create Note</button>
   <hr>
   <div>
     <form v-on:submit.prevent="submit()">
+      <p>
+        <label>Choose a student: </label>
+        <select v-model="studentName">
+          <option v-for="student in students" v-bind:key="student.id">{{ student.name }}</option>
+        </select>
+      </p>
+      <p>
+        <label>Choose a concept: </label>
+        <select v-model="projectTitle">
+          <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
+        </select>
+      </p>
       <p>
         Image: <input type="file" v-on:change="setFile($event)" ref="fileInput">
       </p>
