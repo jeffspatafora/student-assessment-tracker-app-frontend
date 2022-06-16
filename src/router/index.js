@@ -9,7 +9,8 @@ import StudentsIndex from '../views/StudentsIndex.vue';
 import StudentCreate from '../views/StudentCreate.vue';
 import ProjectCreate from '../views/ProjectCreate.vue';
 import TriviaView from '../views/TriviaView.vue';
-import StudentShow from '../views/StudentShow.vue'
+import StudentShow from '../views/StudentShow.vue';
+import StudentWorkUpload from '../views/StudentWorkUpload.vue'
 
 const routes = [
   {
@@ -74,6 +75,11 @@ const routes = [
     path: '/students/:id',
     name: 'student-show',
     component: StudentShow
+  },
+  {
+    path: '/studentworkupload',
+    name: 'student-work-upload',
+    component: StudentWorkUpload
   }
 ]
 
