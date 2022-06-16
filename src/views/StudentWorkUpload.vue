@@ -1,12 +1,30 @@
 <script>
+import axios from 'axios';
+
 export default {
   data: function () {
     return {
       message: "upload student work",
+      image: ""
     };
   },
   created: function () { },
-  methods: {},
+  methods: {
+    setFile: function (event) {
+      if (event.target.files.length > 0) {
+        this.image = event.target.files[0];
+      }
+    },
+    submit: function () {
+      var formData = new FormData();
+      formData.append("image", this.image);
+
+      axios.post("/student_works", formData).then(response => {
+        console.log(response.data);
+        this.$refs.fileInput.value = "";
+      });
+    }
+  },
 };
 </script>
 
