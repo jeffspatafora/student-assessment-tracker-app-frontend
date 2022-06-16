@@ -7,7 +7,9 @@ export default {
       message: "add data",
       newNoteParams: {},
       students: [],
-      projects: []
+      projects: [],
+      image: "",
+      description: ""
     };
   },
   created: function () {
@@ -25,6 +27,21 @@ export default {
       axios.post('/user_notes', this.newNoteParams).then(response => {
         console.log(response, response.data);
         this.$router.push('/usernotesindex');
+      });
+    },
+    setFile: function (event) {
+      if (event.target.files.length > 0) {
+        this.image = event.target.files[0];
+      }
+    },
+    submit: function () {
+      var formData = new FormData();
+      formData.append("description", this.description)
+      formData.append("image", this.image);
+
+      axios.post("/student_works", formData).then(response => {
+        console.log(response.data);
+        this.$refs.fileInput.value = "";
       });
     },
   },
@@ -47,18 +64,19 @@ export default {
       <option v-for="project in projects" v-bind:key="project.id">{{ project.title }}</option>
     </select>
   </p>
+  <hr>
   <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
   <button v-on:click="createUserNote()">Create Note</button>
   <hr>
   <div>
     <form v-on:submit.prevent="submit()">
       <p>
-        Description: <input type="text" v-model="description">
-      </p>
-      <p>
         Image: <input type="file" v-on:change="setFile($event)" ref="fileInput">
       </p>
-      <input type="submit" value="Submit">
+      <p>
+        Description: <input type="text" v-model="description">
+      </p>
+      <input type="submit" value="Upload Student Work Image">
     </form>
   </div>
 </template>
