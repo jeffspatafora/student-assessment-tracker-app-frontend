@@ -57,7 +57,10 @@ export default {
 
   <div class="student-show">
     <h1>{{ student.name }}</h1>
-    <h3>{{ student.email }}</h3>
+    <h3>
+      <a href="mailto: {{ student.email }}">{{ student.email }}</a>
+    </h3>
+
   </div>
 
   <p>
