@@ -39,6 +39,10 @@ export default {
     },
     indexStudentWorks: function () {
       console.log('student works index');
+      axios.get(`/student_works?student_id=${this.student.id}&project_id=${this.project.id}`).then(response => {
+        console.log(response.data);
+        this.studentWorks = response.data
+      });
     }
   },
 };
@@ -59,6 +63,10 @@ export default {
     <select v-model="project.id">
       <option v-for="project in projects" v-bind:key="project.id" v-bind:value="project.id">{{ project.title }}</option>
     </select>
+  </p>
+
+  <p>
+    {{ studentWorks }}
   </p>
 
   <p>
