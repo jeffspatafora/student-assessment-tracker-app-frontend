@@ -70,13 +70,6 @@ export default {
     </select>
   </p>
 
-  <div v-for="image in studentWorks" v-bind:key="image.id">
-    <a v-bind:href="image.image" target="_blank">
-      <p>{{ image.description }}</p>
-    </a>
-    <img v-bind:src="image.image" width="100" height="100">
-  </div>
-
   <p>
     <button v-on:click="indexUserNotes()">see notes data</button> | <button v-on:click="indexStudentWorks()">see student
       work images</button>
@@ -86,6 +79,14 @@ export default {
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
     <hr>
   </div>
+
+  <div v-for="image in studentWorks" v-bind:key="image.id">
+    <a v-bind:href="image.image" target="_blank">
+      <p>{{ image.description }}</p>
+    </a>
+    <img v-bind:src="image.image" width="100" height="100">
+  </div>
+
 </template>
 
 
