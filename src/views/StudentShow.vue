@@ -11,7 +11,8 @@ export default {
       projects: [],
       project: {},
       student: {},
-      studentWorks: {}
+      studentWorks: {},
+      studentWorksImageURLs: []
     };
   },
   created: function () {
@@ -42,6 +43,7 @@ export default {
       axios.get(`/student_works?student_id=${this.student.id}&project_id=${this.project.id}`).then(response => {
         console.log(response.data);
         this.studentWorks = response.data
+
       });
     }
   },
@@ -65,9 +67,12 @@ export default {
     </select>
   </p>
 
-  <p>
-    {{ studentWorks }}
-  </p>
+  <div v-for="image in studentWorks" v-bind:key="image.id">
+    <a v-bind:href="image.image" target="_blank">
+      <p>{{ image.description }}</p>
+    </a>
+    <img v-bind:src="image.image" width="100" height="100">
+  </div>
 
   <p>
     <button v-on:click="indexUserNotes()">see notes data</button> | <button v-on:click="indexStudentWorks()">see student
