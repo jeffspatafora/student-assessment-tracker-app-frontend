@@ -10,7 +10,8 @@ export default {
       students: [],
       projects: [],
       project: {},
-      student: {}
+      student: {},
+      studentWorks: {}
     };
   },
   created: function () {
@@ -35,6 +36,9 @@ export default {
         console.log(response.data);
         this.projects = response.data;
       });
+    },
+    indexStudentWorks: function () {
+      console.log('student works index');
     }
   },
 };
@@ -57,7 +61,10 @@ export default {
     </select>
   </p>
 
-  <button v-on:click="indexUserNotes()">see data</button>
+  <p>
+    <button v-on:click="indexUserNotes()">see notes data</button> | <button v-on:click="indexStudentWorks()">see student
+      work images</button>
+  </p>
 
   <div v-for="note in userNotes" v-bind:key="note.id">
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
