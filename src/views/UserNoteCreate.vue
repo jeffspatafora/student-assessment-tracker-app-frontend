@@ -28,7 +28,8 @@ export default {
       console.log('in create');
       axios.post('/user_notes', this.newNoteParams).then(response => {
         console.log(response, response.data);
-        this.$router.push('/usernotesindex');
+        this.$router.push('/usernotescreate');
+        this.newNoteParams = {};
       });
     },
     setFile: function (event) {
@@ -46,6 +47,10 @@ export default {
       axios.post("/student_works", formData).then(response => {
         console.log(response.data);
         this.$refs.fileInput.value = "";
+        this.$router.push('/usernotescreate');
+        this.description = "";
+        this.studentName = "";
+        this.projectTitle = "";
       });
     },
   },
