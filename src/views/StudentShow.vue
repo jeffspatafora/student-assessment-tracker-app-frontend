@@ -57,6 +57,9 @@ export default {
 
   <div class="student-show">
     <h1>{{ student.name }}</h1>
+    <p>
+      <img v-bind:src="student.cloudinary_image_url" width="240" height="240">
+    </p>
     <h3>
       <a href="mailto: {{ student.email }}">{{ student.email }}</a>
     </h3>
