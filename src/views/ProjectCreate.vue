@@ -19,7 +19,8 @@ export default {
       console.log('create project');
       axios.post('/projects', this.newProjectParams).then(response => {
         console.log(response, response.data);
-        this.$router.push('/usernotesindex');
+        this.$router.push('/projectcreate');
+        this.newProjectParams = {};
       })
     }
   },
@@ -33,7 +34,7 @@ export default {
   <p>Title: <input type="text" v-model="newProjectParams.title" /></p>
   <p>Section: <input type="text" v-model="newProjectParams.section" /></p>
   <p>Section Number: <input type="text" v-model="newProjectParams.section_number" /></p>
-  <button v-on:click="projectCreate()">add project</button>
+  <button v-on:click="projectCreate()" class="btn btn-warning btn-sm">add project</button>
 </template>
 
 <style>

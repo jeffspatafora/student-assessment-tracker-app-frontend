@@ -74,7 +74,8 @@ export default {
   </p>
 
   <p>
-    <button v-on:click="indexUserNotes()">see notes data</button> | <button v-on:click="indexStudentWorks()">see student
+    <button v-on:click="indexUserNotes()" class="btn btn-warning btn-sm">see notes data</button> | <button
+      v-on:click="indexStudentWorks()" class="btn btn-warning btn-sm">see student
       work images</button>
   </p>
 

@@ -44,7 +44,7 @@ export default {
       <p>
         Image: <input type="file" v-on:change="setFile($event)" ref="fileInput">
       </p>
-      <input type="submit" value="Create Student">
+      <input type="submit" value="Create Student" class="btn btn-warning btn-sm">
     </form>
   </div>
 </template>

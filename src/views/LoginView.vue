@@ -44,7 +44,7 @@ export default {
         <label>Password:</label>
         <input type="password" v-model="newSessionParams.password" />
       </p>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" class="btn btn-warning btn-sm" />
     </form>
   </div>
 </template>

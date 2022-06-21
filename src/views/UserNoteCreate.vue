@@ -74,7 +74,7 @@ export default {
     </select>
   </p>
   <p>Note: <input type="text" v-model="newNoteParams.note" /></p>
-  <button v-on:click="createUserNote()">Create Note</button>
+  <button v-on:click="createUserNote()" class="btn btn-warning btn-sm">Create Note</button>
   <hr>
   <div>
     <form v-on:submit.prevent="submit()">
@@ -96,7 +96,7 @@ export default {
       <p>
         Description: <input type="text" v-model="description">
       </p>
-      <input type="submit" value="Upload Student Work Image">
+      <input type="submit" value="Upload Student Work Image" class="btn btn-warning btn-sm">
     </form>
   </div>
 </template>

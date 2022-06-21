@@ -83,7 +83,7 @@ export default {
     </select>
   </p>
 
-  <button v-on:click="getTriviaQuestion()">Get A Question!</button>
+  <button v-on:click="getTriviaQuestion()" class="btn btn-warning btn-sm">Get A Question!</button>
   <h2>{{ question }}</h2>
 
   <p v-for="possibleAnswer in possibleAnswers" v-bind:key="possibleAnswer">
@@ -91,13 +91,16 @@ export default {
   </p>
 
   <div>
-    <button v-on:click="getCorrectAnswer()">See Correct Answer</button>
+    <button v-on:click="getCorrectAnswer()" class="btn btn-warning btn-sm">See Correct Answer</button>
     <p v-if="showCorrectAnswer">{{ showCorrectAnswer }}</p>
   </div>
   <hr>
-  <button v-on:click="resetSessionToken()">Reset Session Token</button>
+  <button v-on:click="resetSessionToken()" class="btn btn-warning btn-sm">Reset Session Token</button>
 
 </template>
 
 <style>
+h2 {
+  color: coral;
+}
 </style>
