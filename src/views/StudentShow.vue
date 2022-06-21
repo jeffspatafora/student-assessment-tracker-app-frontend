@@ -12,7 +12,8 @@ export default {
       project: {},
       student: {},
       studentWorks: {},
-      studentWorksImageURLs: []
+      studentWorksImageURLs: [],
+      currentNote: {}
     };
   },
   created: function () {
@@ -43,8 +44,11 @@ export default {
       axios.get(`/student_works?student_id=${this.student.id}&project_id=${this.project.id}`).then(response => {
         console.log(response.data);
         this.studentWorks = response.data
-
       });
+    },
+    showUserNote: function (note) {
+      this.currentNote = note;
+      document.querySelector("#note-details").showModal();
     }
   },
 };
@@ -84,7 +88,8 @@ export default {
       <div class="col">
         <div v-for="note in userNotes" v-bind:key="note.id">
           <p>{{ note.readable_created_at }} - {{ note.note }}</p>
-          <router-link v-bind:to="`/usernote/${note.id}/edit`">Edit Note</router-link>
+          <!-- <router-link v-bind:to="`/usernote/${note.id}/edit`">Edit Note</router-link> -->
+          <button v-on:click="showUserNote(note)" class="btn btn-warning btn-sm">see note</button>
           <hr>
         </div>
       </div>
@@ -98,6 +103,12 @@ export default {
         </div>
       </div>
     </div>
+    <dialog id="note-details">
+      <form method="dialog">
+        <h6>{{ currentNote.note }}</h6>
+        <button class="btn btn-primary btn-sm">Close</button>
+      </form>
+    </dialog>
   </div>
 
   <!-- <div v-for="note in userNotes" v-bind:key="note.id">
