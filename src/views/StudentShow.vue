@@ -84,6 +84,7 @@ export default {
       <div class="col">
         <div v-for="note in userNotes" v-bind:key="note.id">
           <p>{{ note.readable_created_at }} - {{ note.note }}</p>
+          <router-link v-bind:to="`/usernote/${note.id}/edit`">Edit Note</router-link>
           <hr>
         </div>
       </div>
