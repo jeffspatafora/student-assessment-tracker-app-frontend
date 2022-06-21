@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import UserNotesIndex from '../views/UserNotesIndex.vue';
 import UserNoteCreate from '../views/UserNoteCreate.vue';
+import UserNoteEdit from '../views/UserNoteEdit.vue';
 import SignupView from '../views/SignupView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
@@ -35,6 +36,11 @@ const routes = [
     path: '/usernotescreate',
     name: 'user-notes-create',
     component: UserNoteCreate
+  },
+  {
+    path: '/usernote/:id/edit',
+    name: 'user-note-edit',
+    component: UserNoteEdit
   },
   {
     path: '/signup',
