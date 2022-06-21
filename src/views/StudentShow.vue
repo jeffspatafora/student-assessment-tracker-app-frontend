@@ -13,7 +13,8 @@ export default {
       student: {},
       studentWorks: {},
       studentWorksImageURLs: [],
-      currentNote: {}
+      currentNote: {},
+      editNoteParams: {}
     };
   },
   created: function () {
@@ -48,7 +49,14 @@ export default {
     },
     showUserNote: function (note) {
       this.currentNote = note;
+      this.editNoteParams = note;
       document.querySelector("#note-details").showModal();
+    },
+    updateUserNote: function (note) {
+      axios.patch('/user_notes/' + note.id + '.json', this.editNoteParams).then(response => {
+        console.log('edit note', response.data);
+        this.currentNote = {};
+      });
     }
   },
 };
@@ -89,7 +97,7 @@ export default {
         <div v-for="note in userNotes" v-bind:key="note.id">
           <p>{{ note.readable_created_at }} - {{ note.note }}</p>
           <!-- <router-link v-bind:to="`/usernote/${note.id}/edit`">Edit Note</router-link> -->
-          <button v-on:click="showUserNote(note)" class="btn btn-warning btn-sm">see note</button>
+          <button v-on:click="showUserNote(note)" class="btn btn-warning btn-sm">edit note</button>
           <hr>
         </div>
       </div>
@@ -105,7 +113,10 @@ export default {
     </div>
     <dialog id="note-details">
       <form method="dialog">
-        <h6>{{ currentNote.note }}</h6>
+        <h6>
+          <input type="text" v-model="editNoteParams.note">
+        </h6>
+        <button v-on:click="updateUserNote(currentNote)" class="btn btn-danger btn-sm">Update Note</button>
         <button class="btn btn-primary btn-sm">Close</button>
       </form>
     </dialog>
