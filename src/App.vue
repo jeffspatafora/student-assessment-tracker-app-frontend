@@ -13,11 +13,11 @@
           </li> -->
           <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/students">Students
               List</a></button>
-          <button type="button" class="btn btn-info btn-sm"><a class="nav-link" href="/usernotescreate">Add
+          <button type="button" class="btn btn-primary btn-sm"><a class="nav-link" href="/usernotescreate">Add
               Data</a></button>
           <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/studentcreate">Create a
               Student</a></button>
-          <button type="button" class="btn btn-info btn-sm"><a class="nav-link" href="/projectcreate">Add a
+          <button type="button" class="btn btn-primary btn-sm"><a class="nav-link" href="/projectcreate">Add a
               Concept</a></button>
           <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/trivia">Question of the
               Day</a></button>
@@ -36,7 +36,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/trivia">Question of the Day</a>
           </li> -->
-          <button type="button" class="btn btn-info btn-sm">
+          <button type="button" class="btn btn-primary btn-sm">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -114,6 +114,16 @@ a {
 
 nav {
   padding: 30px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: limegreen;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: gold;
 }
 
 nav a {
