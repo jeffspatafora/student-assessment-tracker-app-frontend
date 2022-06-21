@@ -113,9 +113,10 @@ export default {
     </div>
     <dialog id="note-details">
       <form method="dialog">
-        <h6>
+        <h6>{{ currentNote.note }}</h6>
+        <p>
           <input type="text" v-model="editNoteParams.note">
-        </h6>
+        </p>
         <button v-on:click="updateUserNote(currentNote)" class="btn btn-danger btn-sm">Update Note</button>
         <button class="btn btn-primary btn-sm">Close</button>
       </form>
