@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "add a student",
+      message: "Create a Student",
       image: "",
       studentName: "",
       studentEmail: ""

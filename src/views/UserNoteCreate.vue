@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "add data",
+      message: "Add Data",
       newNoteParams: {},
       students: [],
       projects: [],

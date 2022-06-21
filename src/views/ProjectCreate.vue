@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "add a concept",
+      message: "Add a Concept",
       projects: [],
       newProjectParams: {}
     };
@@ -34,7 +34,7 @@ export default {
   <p>Title: <input type="text" v-model="newProjectParams.title" /></p>
   <p>Section: <input type="text" v-model="newProjectParams.section" /></p>
   <p>Section Number: <input type="text" v-model="newProjectParams.section_number" /></p>
-  <button v-on:click="projectCreate()" class="btn btn-warning btn-sm">add project</button>
+  <button v-on:click="projectCreate()" class="btn btn-warning btn-sm">Add Concept</button>
 </template>
 
 <style>

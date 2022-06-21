@@ -8,35 +8,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li> -->
           <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/students">Students
               List</a></button>
-          <button type="button" class="btn btn-primary btn-sm"><a class="nav-link" href="/usernotescreate">Add
+          <hr>
+          <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/usernotescreate">Add
               Data</a></button>
+          <hr>
           <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/studentcreate">Create a
               Student</a></button>
-          <button type="button" class="btn btn-primary btn-sm"><a class="nav-link" href="/projectcreate">Add a
+          <hr>
+          <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/projectcreate">Add a
               Concept</a></button>
+          <hr>
           <button type="button" class="btn btn-success btn-sm"><a class="nav-link" href="/trivia">Question of the
               Day</a></button>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="/students">Students List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/usernotescreate">Add Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/studentcreate">Create a Student</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/projectcreate">Add a Concept</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/trivia">Question of the Day</a>
-          </li> -->
-          <button type="button" class="btn btn-primary btn-sm">
+          <hr>
+          <button type="button" class="btn btn-success btn-sm">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -51,32 +38,11 @@
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
               </ul>
             </li>
           </button>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Authentication
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/signup">Signup</a></li>
-              <li><a class="dropdown-item" href="/login">Login</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> -->
         </ul>
-        <!-- <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
   </nav>

@@ -28,10 +28,22 @@ export default {
   </div>
   <div v-for="student in students" v-bind:key="student.id">
     <h2>
-      <p>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>
+              <img v-bind:src="student.cloudinary_image_url" width="100" height="100">
+            </p>
+          </div>
+          <div class="col">
+            <router-link v-bind:to="`/students/${student.id}`">{{ student.name }}</router-link>
+          </div>
+        </div>
+      </div>
+      <!-- <p>
         <img v-bind:src="student.cloudinary_image_url" width="100" height="100">
       </p>
-      <router-link v-bind:to="`/students/${student.id}`">{{ student.name }}</router-link>
+      <router-link v-bind:to="`/students/${student.id}`">{{ student.name }}</router-link> -->
       <hr>
     </h2>
   </div>

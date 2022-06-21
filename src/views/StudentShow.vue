@@ -79,7 +79,27 @@ export default {
       work images</button>
   </p>
 
-  <div v-for="note in userNotes" v-bind:key="note.id">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div v-for="note in userNotes" v-bind:key="note.id">
+          <p>{{ note.readable_created_at }} - {{ note.note }}</p>
+          <hr>
+        </div>
+      </div>
+      <div class="col">
+        <div v-for="image in studentWorks" v-bind:key="image.id">
+          <a v-bind:href="image.image" target="_blank">
+            <p>{{ image.description }}</p>
+          </a>
+          <img v-bind:src="image.image" width="100" height="100">
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div v-for="note in userNotes" v-bind:key="note.id">
     <p>{{ note.readable_created_at }} - {{ note.note }}</p>
     <hr>
   </div>
@@ -89,7 +109,7 @@ export default {
       <p>{{ image.description }}</p>
     </a>
     <img v-bind:src="image.image" width="100" height="100">
-  </div>
+  </div> -->
 
 </template>
 
