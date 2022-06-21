@@ -56,6 +56,7 @@ body {
 
 h1 {
   color: limegreen;
+  font-weight: bold;
 }
 
 h3 {
